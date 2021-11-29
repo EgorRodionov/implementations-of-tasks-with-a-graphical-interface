@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Zadanie_1__2____Windows_Form
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string str = textBox1.Text;
+            int a = int.Parse(str);
+
+            if (a > 9 && a < 100)
+            {
+                int sum = a % 10 + a / 10 % 10; // нахождение суммы двузначного числа
+                if (sum % 2 == 0)
+                {
+                    textBox2.Text = "Сумма цифр двузначного числа - является четной";
+                }
+                else
+                    textBox2.Text = ("Сумма цифр двузначного числа - не является четной");
+            }
+            else
+                MessageBox.Show("Некоректное число. Введите двузначное число!");
+
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+    }
+}
